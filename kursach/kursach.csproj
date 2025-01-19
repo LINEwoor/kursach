@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="img\Blue.png" />
+    <None Remove="img\bomb\BBlue.png" />
+    <None Remove="img\bomb\BBrown.png" />
+    <None Remove="img\bomb\BGreen.png" />
+    <None Remove="img\bomb\BRed.png" />
+    <None Remove="img\bomb\BYellow.png" />
+    <None Remove="img\Brown.png" />
+    <None Remove="img\Green.png" />
+    <None Remove="img\Red.png" />
+    <None Remove="img\Yellow.png" />
+    <None Remove="scores.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\bomb\BYellow.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\base\Blue.png" />
+    <Resource Include="img\base\Brown.png" />
+    <Resource Include="img\base\Green.png" />
+    <Resource Include="img\base\Red.png" />
+    <Resource Include="img\base\Yellow.png" />
+    <Resource Include="img\bomb\BBlue.png" />
+    <Resource Include="img\bomb\BBrown.png" />
+    <Resource Include="img\bomb\BGreen.png" />
+    <Resource Include="img\bomb\BRed.png" />
+  </ItemGroup>
+
+</Project>

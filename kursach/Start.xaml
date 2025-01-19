@@ -1,0 +1,16 @@
+<Window x:Class="kursach.Start"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kursach"
+        mc:Ignorable="d"
+        Title="Start" Height="450" Width="800">
+    <Canvas x:Name="scene" >
+        <Button x:Name="Reset" Content="Reset" FontSize="24" Canvas.Left="601" Canvas.Top="263" HorizontalAlignment="Center" VerticalAlignment="Top" Width="110" Height="49" Click="Reset_Click"></Button>
+        <TextBox x:Name="NameT" Canvas.Left="281" Canvas.Top="46" HorizontalAlignment="Center" VerticalAlignment="Top" Width="204" Height="41" Text="Vlad" TextAlignment="Center" FontSize="24"></TextBox>
+        <DataGrid x:Name="Leaderboard" AutoGenerateColumns="True" Canvas.Left="545" Canvas.Top="19" Height="239" Width="220" HorizontalAlignment="Center" VerticalAlignment="Top"></DataGrid>
+        <Button Content="Play" Canvas.Left="281" Canvas.Top="177" Height="81" Width="204" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Button_Click" FontSize="36"/>
+    </Canvas>
+
+</Window>

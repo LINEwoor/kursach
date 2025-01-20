@@ -31,7 +31,8 @@ namespace kursach
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
+
+            MainWindow mainWindow = new MainWindow(NameT.Text);
             mainWindow.Show();
             Close();
         }
@@ -61,11 +62,6 @@ namespace kursach
                 string jsonContent = File.ReadAllText(filePath);
             }
 
-            records.Add(new Record
-            {
-                Name = "   ",
-                Score = 0,
-            });
 
             string resetRecords = JsonSerializer.Serialize(records);
 

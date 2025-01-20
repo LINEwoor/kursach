@@ -26,8 +26,9 @@ namespace kursach
         Controller controller;
         private DispatcherTimer timer;
         private TimeSpan time;
+        private string name;
 
-        public MainWindow()
+        public MainWindow(string name)
         {
             InitializeComponent();
             controller = new Controller(gridSize, ButtonCanvas, ImageCanvas, progressBar);
@@ -36,13 +37,16 @@ namespace kursach
             Height = (gridSize + 1) * 100 + 40;
             Width = gridSize * 100 + 15;
 
-            time = TimeSpan.Zero;
+            this.name = name;
 
+            time = TimeSpan.Zero;
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += Timer_Tick;
             timer.Start();
         }
+
+
 
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -60,11 +64,19 @@ namespace kursach
             }
             if (progressBar.Value <= 0)
             {
-                SaveToJson();
-                timer.Stop();
-                Close();
+                EndGame();
             }
         }
+
+        private void EndGame()
+        {
+            SaveToJson();
+            timer.Stop();
+            Start startWindow = new Start();
+            startWindow.Show();
+            Close();
+        }
+
         private void SaveToJson()
         {
             string filePath = System.IO.Directory.GetCurrentDirectory() + "\\scores.json";
@@ -84,7 +96,7 @@ namespace kursach
 
             records.Add(new Record
             {
-                Name = "Vlad",
+                Name = name,
                 Score = (int)controller.getPoints()
             });
 
